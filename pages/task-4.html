@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>uLearn — Список заданий</title>
+    <title>uLearn — DOM</title>
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/dom.css" />
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/task-4.js"></script>
   </head>
 
   <body>
@@ -27,7 +29,7 @@
 
         <nav class="site-nav" id="site-nav">
           <a class="nav-link" href="../index.html">Главная</a>
-          <a class="nav-link active" href="../pages/tasks.html">Задания</a>
+          <a class="nav-link" href="../pages/tasks.html">Задания</a>
           <a class="nav-link" href="../pages/project.html">Курсовая</a>
         </nav>
       </div>
@@ -35,30 +37,42 @@
 
     <main id="main">
       <section class="container page-head">
-        <h1>Список заданий</h1>
+        <h1>DOM</h1>
       </section>
 
-      <section class="container tasks">
-        <a class="task-card big" href="../index.html">
-          <img src="../assets/gallery-1.jpg" loading="lazy" />
-          <h2 class="card-caption tiny">Верстка сайта</h2>
-        </a>
-        <a class="task-card big" href="./task-2.html">
-          <img src="../assets/gallery-2.png" loading="lazy" />
-          <h2 class="card-caption tiny">Рисунок CSS</h2>
-        </a>
-        <a class="task-card big" href="./task-3.html">
-          <img src="../assets/gallery-3.webp" loading="lazy" />
-          <h2 class="card-caption tiny">Flexbox</h2>
-        </a>
-        <a class="task-card big" href="./task-4.html">
-          <img src="../assets/gallery-4.webp" loading="lazy" />
-          <h2 class="card-caption tiny">DOM</h2>
-        </a>
-        <a class="task-card big" href="../index.html">
-          <img src="../assets/gallery-5.jpg" loading="lazy" />
-          <h2 class="card-caption tiny">Перетаскивание объектов</h2>
-        </a>
+      <section class="container content-grid">
+        <aside class="card dom">
+          <div class="card-block">
+            <h2>Нумерованный список</h2>
+            <ol class="checklist" id="phraseList"></ol>
+          </div>
+        </aside>
+
+        <article class="card task-content">
+          <div class="card-block">
+            <h2>Задание 1</h2>
+            <div class="dom-actions">
+              <button class="button" id="btnCreate" type="button">Создать</button>
+              <button class="button" id="btnPaint" type="button">Перекрасить</button>
+            </div>
+
+            <table class="phrase-table" id="phraseTable">
+              <thead>
+                <tr>
+                  <th>латинский язык</th>
+                  <th>русский язык</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="card-block">
+            <div class="rand-wrap">
+              <h2>Задание 2</h2>
+              <div id="rand"></div>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
 

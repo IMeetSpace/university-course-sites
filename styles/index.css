@@ -88,6 +88,7 @@ p {
 }
 
 button {
+  cursor: pointer;
   font: inherit;
 }
 
@@ -102,7 +103,8 @@ img {
   height: auto;
 }
 
-ul {
+ul,
+ol {
   padding-left: 18px;
 }
 
@@ -240,7 +242,7 @@ ul {
 }
 
 .button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.625rem 0.875rem;

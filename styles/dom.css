@@ -1,0 +1,45 @@
+.class1 {
+  background: #241133;
+}
+.class2 {
+  background: #332111;
+}
+
+/* Таблица (Задание 1) */
+.phrase-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.phrase-table th,
+.phrase-table td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 10px;
+  vertical-align: top;
+}
+.phrase-table thead th {
+  text-transform: lowercase;
+}
+
+/* Чётные строки */
+.bold {
+  font-weight: 700;
+}
+
+/* Задание 2 */
+#rand p {
+  margin: 8px 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+}
+#rand u {
+  text-underline-offset: 3px;
+}
+#rand em {
+  font-style: italic;
+}
+
+/* Задание 3 */
+#phraseList ol {
+  list-style-type: disc;
+}
