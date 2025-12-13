@@ -2,9 +2,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.container {
-  @include container;
-}
 .muted {
   color: $muted;
 }
@@ -148,34 +145,6 @@
   }
 }
 
-.hero {
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-
-    @include respondMax($bp-md) {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      gap: rem-calc(16);
-
-      p {
-        color: $muted;
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-    }
-  }
-}
-
 .button {
   @include button;
 
@@ -206,16 +175,6 @@
   }
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: rem-calc(16);
-
-  @include respondMax($bp-md) {
-    grid-template-columns: 1fr;
-  }
-}
-
 .block-tasks {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -228,36 +187,43 @@
   @include respondMax($bp-md) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
 
-  .task-card {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid $line;
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
-    transition: ease-in-out 0.1s all;
-    cursor: pointer;
+.task-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $line;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  transition: ease-in-out 0.1s all;
+  cursor: pointer;
 
-    &:hover {
-      border-color: rgba(255, 255, 255, 0.14);
-      background-color: rgba(255, 255, 255, 0.05);
-      .card-caption {
-        color: inherit;
-      }
-    }
-
-    img {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
-
+  &.big {
     .card-caption {
-      padding: 12px;
-      color: $muted;
-      transition: ease-in-out 0.1s all;
+      padding: rem-calc(16);
+      color: $typo-primary;
     }
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+    background-color: rgba(255, 255, 255, 0.05);
+    .card-caption {
+      color: inherit;
+    }
+  }
+
+  img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .card-caption {
+    padding: rem-calc(12);
+    color: $muted;
+    transition: ease-in-out 0.1s all;
   }
 }
 
@@ -280,13 +246,6 @@
   .checklist li {
     margin: 4px 0;
   }
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  padding-bottom: 24px;
 }
 
 .card-actions {

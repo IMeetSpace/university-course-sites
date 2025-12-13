@@ -1,0 +1,49 @@
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.container {
+  @include container;
+}
+
+.container.hero-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+
+  @include respondMax($bp-md) {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(16);
+
+    p {
+      color: $muted;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.container.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: rem-calc(16);
+
+  @include respondMax($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container.tasks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: rem-calc(16);
+}

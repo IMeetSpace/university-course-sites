@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>uLearn — Верстка и прототипирование сайтов</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">
+          <span class="css-logo"></span>
+          <span class="brand-text">
+            <span class="brand-title">uLearn</span>
+            <span class="brand-subtitle">Верстка и прототипирование сайтов</span>
+          </span>
+        </a>
+
+        <button class="burger" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav">
+          <a class="nav-link" href="../index.html">Главная</a>
+          <a class="nav-link active" href="../pages/tasks.html">Задания</a>
+          <a class="nav-link" href="../pages/project.html">Курсовая</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="container page-head">
+        <h1>Список заданий</h1>
+        <p class="muted"></p>
+      </section>
+
+      <section class="container tasks">
+        <a class="task-card big" href="../index.html">
+          <img src="../assets/gallery-1.jpg" loading="lazy" />
+          <h2 class="card-caption tiny">Верстка сайта</h2>
+        </a>
+        <a class="task-card big" href="../index.html">
+          <img src="../assets/gallery-2.png" loading="lazy" />
+          <h2 class="card-caption tiny">Рисунок CSS</h2>
+        </a>
+        <a class="task-card big" href="../index.html">
+          <img src="../assets/gallery-3.webp" loading="lazy" />
+          <h2 class="card-caption tiny">Flexbox</h2>
+        </a>
+        <a class="task-card big" href="../index.html">
+          <img src="../assets/gallery-4.webp" loading="lazy" />
+          <h2 class="card-caption tiny">DOM</h2>
+        </a>
+        <a class="task-card big" href="../index.html">
+          <img src="../assets/gallery-5.jpg" loading="lazy" />
+          <h2 class="card-caption tiny">Перетаскивание объектов</h2>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> uLearn — Верстка и прототипирование сайтов</p>
+        <p class="muted">Создано на HTML/SCSS/JS</p>
+      </div>
+    </footer>
+  </body>
+</html>

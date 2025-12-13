@@ -103,11 +103,6 @@ ul {
   padding-left: 18px;
 }
 
-.container {
-  width: min(1200px, 90vw);
-  margin: 0 auto;
-}
-
 .muted {
   color: #a9b2d6;
 }
@@ -240,30 +235,6 @@ ul {
   border-radius: 2px;
 }
 
-.hero .hero-inner {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-}
-@media (max-width: 1024px) {
-  .hero .hero-inner {
-    grid-template-columns: 1fr;
-  }
-}
-.hero .hero-inner .hero-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.hero .hero-inner .hero-text p {
-  color: #a9b2d6;
-}
-.hero .hero-inner .hero-text .hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
 .button {
   display: flex;
   align-items: center;
@@ -303,17 +274,6 @@ ul {
   gap: 0.75rem;
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1rem;
-}
-@media (max-width: 1024px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .block-tasks {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -329,7 +289,8 @@ ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-.block-tasks .task-card {
+
+.task-card {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -340,19 +301,23 @@ ul {
   transition: ease-in-out 0.1s all;
   cursor: pointer;
 }
-.block-tasks .task-card:hover {
+.task-card.big .card-caption {
+  padding: 1rem;
+  color: #eee;
+}
+.task-card:hover {
   border-color: rgba(255, 255, 255, 0.14);
   background-color: rgba(255, 255, 255, 0.05);
 }
-.block-tasks .task-card:hover .card-caption {
+.task-card:hover .card-caption {
   color: inherit;
 }
-.block-tasks .task-card img {
+.task-card img {
   aspect-ratio: 4/3;
   object-fit: cover;
 }
-.block-tasks .task-card .card-caption {
-  padding: 12px;
+.task-card .card-caption {
+  padding: 0.75rem;
   color: #a9b2d6;
   transition: ease-in-out 0.1s all;
 }
@@ -381,13 +346,6 @@ ul {
   margin: 4px 0;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  padding-bottom: 24px;
-}
-
 .card-actions {
   display: flex;
   gap: 10px;
@@ -406,4 +364,50 @@ ul {
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.container {
+  width: min(1200px, 90vw);
+  margin: 0 auto;
+}
+
+.container.hero-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 1024px) {
+  .container.hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+.container.hero-inner .hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container.hero-inner .hero-text p {
+  color: #a9b2d6;
+}
+.container.hero-inner .hero-text .hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.container.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  .container.content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container.tasks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
