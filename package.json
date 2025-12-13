@@ -1,0 +1,16 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass styles/index.scss styles/index.css --style=compressed --no-source-map",
+    "watch:css": "sass styles/index.scss styles/index.css --watch --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.96.0"
+  }
+}

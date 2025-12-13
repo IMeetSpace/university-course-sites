@@ -1,0 +1,30 @@
+@use 'sass:math';
+@use 'sass:meta';
+
+$base-font-size: 16px !default;
+
+@function rem-calc($value, $base: $base-font-size) {
+  @if $value == 0 {
+    @return 0;
+  }
+
+  @if meta.type-of($base) != 'number' {
+    @error "rem-calc(): base должен быть числом. Получено: #{$base}";
+  }
+  @if math.is-unitless($base) {
+    $base: $base * 1px;
+  } @else if math.unit($base) != 'px' {
+    @error "rem-calc(): base должен быть в px. Получено: #{$base}";
+  }
+
+  @if meta.type-of($value) != 'number' {
+    @error "rem-calc(): значение должно быть числом или px. Получено: #{$value}";
+  }
+  @if math.is-unitless($value) {
+    $value: $value * 1px;
+  } @else if math.unit($value) != 'px' {
+    @error "rem-calc(): значение должно быть в px (или без единиц). Получено: #{$value}";
+  }
+
+  @return math.div($value, $base) * 1rem;
+}

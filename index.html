@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>uLearn — Верстка и прототипирование сайтов</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script defer src="./js/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html">
+          <span class="css-logo"></span>
+          <span class="brand-text">
+            <span class="brand-title">uLearn</span>
+            <span class="brand-subtitle">Верстка и прототипирование сайтов</span>
+          </span>
+        </a>
+
+        <button class="burger" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav">
+          <a class="nav-link active" href="./index.html">Главная</a>
+          <a class="nav-link" href="./pages/tasks.html">Задания</a>
+          <a class="nav-link" href="./pages/project.html">Курсовая</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>
+              Задания по курсу<br />
+              "Верстка и прототипирование сайтов"
+            </h1>
+            <p>
+              Здесь будут собраны задания и курсовая работа по предмету. Макет построен на flex/grid, а элементы
+              адаптируются под разные экраны.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="./pages/tasks.html">Перейти к заданиям</a>
+              <a class="button" href="./pages/project.html">Смотреть курсовую</a>
+            </div>
+          </div>
+
+          <div class="card hero-card" aria-label="Использованные технологии">
+            <div class="card-block">
+              <h2>Использованные технологии</h2>
+              <ul class="checklist">
+                <li><strong>HTML5</strong> — семантическая разметка страницы;</li>
+                <li><strong>SCSS (Sass)</strong> — препроцессор CSS (модули, переменные, функции);</li>
+                <li><strong>JavaScript (ES6)</strong> — интерактивность интерфейса;</li>
+                <li><strong>GitHub Pages</strong> — деплой сайта.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container content-grid">
+        <aside class="card side">
+          <div class="card-block">
+            <h2>Новости</h2>
+
+            <ul class="checklist">
+              <li>Задание #1 выполнено!</li>
+            </ul>
+          </div>
+
+          <div class="divider"></div>
+          <div class="group">
+            <a class="button wide" href="./tasks.html">Открыть список заданий</a>
+            <a class="button wide" href="./project.html">Перейти к курсовой</a>
+          </div>
+        </aside>
+
+        <article class="card article">
+          <div class="card-block">
+            <h2>Список заданий на курсе</h2>
+            <div class="block-tasks">
+              <div class="task-card">
+                <img src="./assets/gallery-1.jpg" loading="lazy" />
+                <p class="card-caption tiny">Верстка сайта</p>
+              </div>
+              <div class="task-card">
+                <img src="./assets/gallery-2.png" loading="lazy" />
+                <p class="card-caption tiny">Рисунок CSS</p>
+              </div>
+              <div class="task-card">
+                <img src="./assets/gallery-3.webp" loading="lazy" />
+                <p class="card-caption tiny">Flexbox</p>
+              </div>
+              <div class="task-card">
+                <img src="./assets/gallery-4.webp" loading="lazy" />
+                <p class="card-caption tiny">DOM</p>
+              </div>
+              <div class="task-card">
+                <img src="./assets/gallery-5.jpg" loading="lazy" />
+                <p class="card-caption tiny">Перетаскивание объектов</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <h3>Что такое HTML?</h3>
+            <span>
+              <p>
+                HTML (HyperText Markup Language — «язык гипертекстовой разметки») — самый базовый строительный блок
+                Веба. Он определяет содержание и структуру веб-контента. Другие технологии, помимо HTML, обычно
+                используются для описания внешнего вида/представления (CSS) или функциональности/поведения (JavaScript)
+                веб-страницы.
+              </p>
+              <p>
+                Под гипертекстом ("hypertext") понимаются ссылки, которые соединяют веб-страницы друг с другом либо в
+                пределах одного веб-сайта, либо между веб-сайтами. Ссылки являются фундаментальным аспектом Веба.
+                Загружая контент в Интернет и связывая его со страницами, созданными другими людьми, вы становитесь
+                активным участником Всемирной паутины.
+              </p>
+              <p>
+                HTML использует разметку ("markup") для отображения текста, изображений и другого контента в
+                веб-браузере.
+              </p>
+            </span>
+          </div>
+
+          <div class="card-block">
+            <h3>Что такое CSS?</h3>
+            <span>
+              <p>
+                Cascading Style Sheets (CSS) — это язык иерархических правил (таблиц стилей), используемый для
+                представления внешнего вида документа, написанного на HTML или XML (включая различные языки XML, такие
+                как SVG и XHTML).
+              </p>
+              <p>
+                CSS описывает, каким образом элемент должен отображаться на экране, на бумаге, голосом или с
+                использованием других медиа средств.
+              </p>
+            </span>
+          </div>
+
+          <div class="card-block">
+            <h3>Что такое SCSS?</h3>
+            <span>
+              <p>
+                SCSS — препроцессор CSS, который расширяет базовую функциональность CSS. А именно: позволяет
+                использовать переменные, функции, условия, циклы и другие конструкции, отсутствующие в стандартном CSS.
+              </p>
+            </span>
+          </div>
+
+          <div class="card-block">
+            <h3>Что такое JavaScript?</h3>
+            <span>
+              <p>Изначально <em>JavaScript</em> был создан, чтобы <em>«сделать веб-страницы живыми»</em>.</p>
+              <p>
+                Программы на этом языке называются <em>скриптами</em>. Они могут встраиваться в HTML и выполняться
+                автоматически при загрузке веб-страницы.
+              </p>
+              <p>
+                Скрипты распространяются и выполняются, как простой текст. Им не нужна специальная подготовка или
+                компиляция для запуска.
+              </p>
+              <p>Это отличает JavaScript от другого языка – Java.</p>
+
+              <p>
+                Сегодня JavaScript может выполняться не только в браузере, но и на сервере или на любом другом
+                устройстве, которое имеет специальную программу, называющуюся «движком» JavaScript.
+              </p>
+              <p>У браузера есть собственный движок, который иногда называют «виртуальная машина JavaScript».</p>
+              <p>Разные движки имеют разные «кодовые имена». Например:</p>
+              <ul>
+                <li>V8 – в Chrome, Opera и Edge.</li>
+                <li>SpiderMonkey – в Firefox.</li>
+                <li>…Ещё есть «Chakra» для IE, «JavaScriptCore», «Nitro» и «SquirrelFish» для Safari и т.д.</li>
+              </ul>
+              <p>Эти названия полезно знать, так как они часто используются в статьях для разработчиков.</p>
+            </span>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> uLearn — Верстка и прототипирование сайтов</p>
+        <p class="muted">Создано на HTML/SCSS/JS</p>
+      </div>
+    </footer>
+  </body>
+</html>

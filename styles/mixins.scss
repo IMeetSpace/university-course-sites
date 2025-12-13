@@ -1,0 +1,35 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+@mixin container {
+  width: min(#{$container}, 90vw);
+  margin: 0 auto;
+}
+
+@mixin card {
+  background: linear-gradient(180deg, rgba(17, 26, 51, 0.95), rgba(15, 23, 48, 0.95));
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: rem-calc(16);
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(16);
+}
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem-calc(10) rem-calc(14);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: $typo-primary;
+}
+
+@mixin respondMax($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
