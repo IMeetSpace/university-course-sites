@@ -46,4 +46,23 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: rem-calc(16);
+  @include respondMax($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respondMax($bp-md) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.container.task {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem-calc(16);
+
+  .task-content {
+    max-height: 500px;
+    align-items: center;
+    justify-content: center;
+  }
 }

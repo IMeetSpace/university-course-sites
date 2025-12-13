@@ -12,12 +12,15 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: radial-gradient(1100px 600px at 20% 0%, rgba(124, 92, 255, 0.25), transparent 55%), radial-gradient(900px 500px at 90% 20%, rgba(61, 214, 198, 0.18), transparent 60%), #0b1020;
   color: #ccd0e2;
   line-height: 1.6;
 }
 body main {
+  margin-bottom: auto;
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
@@ -212,6 +215,7 @@ ul {
 .burger {
   display: none;
   width: 48px;
+  min-width: 48px;
   height: 48px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -410,4 +414,25 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+@media (max-width: 1400px) {
+  .container.tasks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1024px) {
+  .container.tasks {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.container.task {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.container.task .task-content {
+  max-height: 500px;
+  align-items: center;
+  justify-content: center;
 }

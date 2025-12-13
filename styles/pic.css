@@ -1,0 +1,142 @@
+.pic {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#2a46b8 0%, #6b86ff 55%, #9fb2ff 100%);
+}
+
+/* Горы */
+.mount {
+  position: absolute;
+  bottom: 4px;
+  width: 0;
+  height: 0;
+  border-left: 36px solid transparent;
+  border-right: 36px solid transparent;
+  border-bottom: 48px solid #38d14a;
+  z-index: 5;
+}
+.mount.m1 {
+  left: 0;
+}
+.mount.m2 {
+  left: 20%;
+}
+.mount.m3 {
+  right: 20%;
+}
+.mount.m4 {
+  right: 0;
+}
+
+/* Грибы */
+.mushroom {
+  position: absolute;
+  bottom: 24px;
+  width: 80px;
+  height: 96px;
+}
+.mushroom .cap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 48px;
+  background: radial-gradient(circle at 50% 30%, #cc838b 0%, #3f1418 100%);
+  border-radius: 48px 48px 0 0;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.12);
+}
+.mushroom .stem {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  width: 36px;
+  height: 60px;
+  background: #ccc;
+  border-radius: 40%;
+  transform: translateX(-50%);
+  border: #6e2e34 2px solid;
+}
+.mush-1 {
+  left: 16px;
+}
+.mush-2 {
+  left: 54px;
+  transform: scale(0.75) rotate(45deg) translateY(10%) translateX(20%);
+}
+
+/* Стрекоза */
+.dragonfly {
+  position: absolute;
+  left: 110px;
+  bottom: 90px;
+  width: 80px;
+  height: 60px;
+  transform: rotate(-30deg);
+}
+.dragonfly .body {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 48px;
+  height: 20px;
+  background: #f2c84e;
+  border: #997404 1px solid;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(50%);
+}
+.dragonfly .head {
+  position: absolute;
+  left: 20%;
+  bottom: 50%;
+  width: 20px;
+  height: 20px;
+  background: #f2c84e;
+  border: #997404 1px solid;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(50%);
+}
+.dragonfly .eye {
+  position: absolute;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 50%;
+}
+.eye.e1 {
+  top: 2px;
+}
+.eye.e2 {
+  bottom: 2px;
+}
+.dragonfly .wing {
+  position: absolute;
+  left: 50%;
+  width: 36px;
+  height: 18px;
+  background: #277dff;
+  border: #0856cc 2px solid;
+  border-radius: 50%;
+}
+.wing.w1 {
+  top: 0;
+  left: 40%;
+  transform: translateX(-50%) rotate(-120deg);
+}
+.wing.w2 {
+  top: 0;
+  left: 60%;
+  transform: translateX(-50%) rotate(120deg);
+}
+.wing.w3 {
+  bottom: 0;
+  left: 60%;
+  transform: translateX(-50%) rotate(-120deg);
+}
+.wing.w4 {
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-50%) rotate(120deg);
+}

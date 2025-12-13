@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>uLearn — Рисунок CSS</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/pic.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">
+          <span class="css-logo"></span>
+          <span class="brand-text">
+            <span class="brand-title">uLearn</span>
+            <span class="brand-subtitle">Верстка и прототипирование сайтов</span>
+          </span>
+        </a>
+
+        <button class="burger" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav">
+          <a class="nav-link" href="../index.html">Главная</a>
+          <a class="nav-link" href="../pages/tasks.html">Задания</a>
+          <a class="nav-link" href="../pages/project.html">Курсовая</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="container page-head">
+        <h1>Рисунок CSS</h1>
+        <p class="muted">
+          Создать рисунки, с помощью стилевой таблицы pic.css. Размер 200х200px. <br />Рисунок разместить в части
+          Content
+        </p>
+      </section>
+
+      <section class="container task">
+        <article class="card task-content">
+          <div class="pic pic-v1">
+            <div class="mount m1"></div>
+            <div class="mount m2"></div>
+            <div class="mount m3"></div>
+            <div class="mount m4"></div>
+
+            <div class="mushroom mush-1">
+              <div class="stem"></div>
+              <div class="cap"></div>
+            </div>
+
+            <div class="mushroom mush-2">
+              <div class="stem"></div>
+              <div class="cap"></div>
+            </div>
+
+            <div class="dragonfly">
+              <div class="wing w1"></div>
+              <div class="wing w2"></div>
+              <div class="wing w3"></div>
+              <div class="wing w4"></div>
+
+              <div class="body"></div>
+
+              <div class="head">
+                <div class="eye e1"></div>
+                <div class="eye e2"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> uLearn — Верстка и прототипирование сайтов</p>
+        <p class="muted">Создано на HTML/SCSS/JS</p>
+      </div>
+    </footer>
+  </body>
+</html>
