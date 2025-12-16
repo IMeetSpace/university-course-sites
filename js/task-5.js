@@ -24,9 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Текущий перетаскиваемый элемент
   let active = null;
 
-  // Выбранный элемент (в вашем коде сейчас используется только для выделения)
-  let selectedPiece = null;
-
   // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 
   // Применяет transform с текущим углом поворота
@@ -231,7 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
   playground.addEventListener(
     'wheel',
     (e) => {
-      // В вашей реализации вращается активный элемент (который перетаскивают прямо сейчас)
       const el = active?.el;
       if (!el || el.dataset.locked === '1') return;
 
