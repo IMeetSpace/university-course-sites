@@ -34,6 +34,8 @@ const PAGE_START = 'index.html';
 const PAGE_GAME = 'game.html';
 const PAGE_RATING = 'rating.html';
 
+const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
 // Состояние
 const STATE = {
   playerName: '',
@@ -305,8 +307,8 @@ function runLevel1Round() {
     tile.textContent = String(num);
     tile.dataset.value = String(num);
 
-    // Двойное нажатие
-    tile.addEventListener('dblclick', () => {
+    // Обработчик нажатия
+    const handlePick = () => {
       if (STATE.isPaused) return;
       const value = Number(tile.dataset.value);
       const expected = STATE.level1ExpectedOrder[STATE.level1CurrentIndex];
@@ -325,7 +327,12 @@ function runLevel1Round() {
         changeScore(-5);
         shakeElement(tile);
       }
-    });
+    };
+
+    tile.addEventListener('dblclick', handlePick);
+    if (isMobile) {
+      tile.addEventListener('click', handlePick);
+    }
 
     gameArea.appendChild(tile);
   });
@@ -408,6 +415,36 @@ function runLevel2Round() {
       e.dataTransfer.setData('text/plain', tile.dataset.value);
       e.dataTransfer.setData('correct', tile.dataset.correct);
     });
+
+    // Обработчик нажатий для мобильных
+    if (isMobile) {
+      tile.addEventListener('click', () => {
+        if (STATE.isPaused) return;
+
+        const valueStr = tile.dataset.value;
+        const correctFlag = tile.dataset.correct;
+        if (!valueStr) return;
+
+        answerZone.textContent = valueStr;
+        answerZone.classList.add('exp-slot--filled');
+
+        const isCorrect = correctFlag === '1';
+        if (isCorrect) {
+          // Верный ответ: начисляем очки и завершаем раунд
+          changeScore(15);
+          onRoundFinished();
+        } else {
+          // Неверный ответ: штраф
+          changeScore(-10);
+          shakeElement(answerZone);
+
+          setTimeout(() => {
+            answerZone.textContent = '?';
+            answerZone.classList.remove('exp-slot--filled');
+          }, 250);
+        }
+      });
+    }
 
     fallingContainer.appendChild(tile);
   });
