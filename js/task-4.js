@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const ru = ['Привычка - вторая натура', 'Заметьте хорошо!', 'Беда не приходит одна', 'Через тернии к звёздам'];
 
   // DOM элементы
-  const btnCreate = document.getElementById('btnCreate');
-  const btnPaint = document.getElementById('btnPaint');
+  const buttonCreate = document.getElementById('buttonCreate');
+  const buttonPaint = document.getElementById('buttonPaint');
   const tbody = document.querySelector('#phraseTable tbody');
   const rand = document.getElementById('rand');
   const phraseList = document.getElementById('phraseList');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return n % 2 === 0 ? 'class1' : 'class2';
   }
 
-  btnCreate?.addEventListener('click', () => {
+  buttonCreate?.addEventListener('click', () => {
     const idx = takeRandomIndex();
     if (idx === null) {
       alert('Фразы закончились');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Кнопка "Перекрасить"
-  btnPaint?.addEventListener('click', () => {
+  buttonPaint?.addEventListener('click', () => {
     const rows = document.querySelectorAll('.class1');
     rows.forEach((tr) => {
       tr.classList.add('bold');

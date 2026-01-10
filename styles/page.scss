@@ -160,6 +160,13 @@
     background: linear-gradient(135deg, rgba($accent, 0.95), rgba($accent, 0.55));
     border-color: rgba($accent, 0.55);
   }
+  &.accent2 {
+    background: linear-gradient(135deg, rgba($accent2, 0.95), rgba($accent2, 0.55));
+    border-color: rgba($accent2, 0.55);
+  }
+  &.border {
+    border-color: rgba($accent, 0.55);
+  }
 
   &.wide {
     width: 100%;
@@ -235,6 +242,12 @@
   @include respondMax($bp-md) {
     flex-direction: row;
   }
+  &.row {
+    flex-direction: row;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
 }
 .divider {
   height: 1px;
@@ -268,4 +281,14 @@
     gap: 12px;
     flex-wrap: wrap;
   }
+}
+
+.w4 {
+  width: 25%;
+}
+.w8 {
+  width: 50%;
+}
+.w16 {
+  width: 100%;
 }

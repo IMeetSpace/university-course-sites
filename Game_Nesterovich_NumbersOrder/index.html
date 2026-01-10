@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>uLearn — Игра «Порядок чисел»</title>
+    <link rel="icon" type="image/x-icon" href="./assets/image.png" />
+    <link rel="stylesheet" href="./styles/game.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script defer src="./js/main.js"></script>
+  </head>
+
+  <body data-page="start">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">
+          <span class="css-logo"></span>
+          <span class="brand-text">
+            <span class="brand-title">uLearn</span>
+            <span class="brand-subtitle">Верстка и прототипирование сайтов</span>
+          </span>
+        </a>
+
+        <button class="burger" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav">
+          <a class="nav-link" href="../index.html">Главная</a>
+          <a class="nav-link" href="../pages/tasks.html">Задания</a>
+          <a class="nav-link active" href="./index.html">Курсовая</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="container page-head">
+        <h1>Игра «Порядок чисел»</h1>
+      </section>
+
+      <section class="container task">
+        <article class="card">
+          <h2>Авторизация</h2>
+          <form id="start-form" class="group wrap">
+            <div class="group row wrap">
+              <label class="w16 form-row">
+                <span>Имя:</span>
+                <input
+                  type="text"
+                  id="player-name-input"
+                  required
+                  minlength="3"
+                  maxlength="20"
+                  placeholder="SuperGamer" />
+              </label>
+
+              <label class="w16 form-row">
+                <span>Режим игры:</span>
+                <select id="game-mode">
+                  <option value="0">Все уровни</option>
+                  <option value="1">Уровень 1 — Порядок чисел</option>
+                  <option value="2">Уровень 2 — Прогрессии</option>
+                  <option value="3">Уровень 3 — Выражения</option>
+                </select>
+              </label>
+            </div>
+            <button type="submit" class="button primary wide">Начать игру</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Лучшие результаты</h2>
+          <div id="start-rating-table" class="rating-table"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> uLearn — Верстка и прототипирование сайтов</p>
+        <p class="muted">Создано на HTML/SCSS/JS</p>
+      </div>
+    </footer>
+  </body>
+</html>
