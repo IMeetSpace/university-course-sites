@@ -3,7 +3,7 @@ const LEVELS = [
     id: 1,
     key: 'order',
     name: 'Уровень 1: Порядок чисел',
-    description: 'Дважды щёлкните по числам в порядке возрастания. Ошибка — штрафные баллы.',
+    description: 'Дважды щёлкните по числам в нужном порядке. Ошибка — штрафные баллы.',
     rounds: 3,
     timeLimit: 30,
   },
@@ -285,16 +285,47 @@ function runLevel1Round() {
   const gameArea = $('game-area');
   if (!gameArea) return;
 
-  // Генерируем числа
-  const count = 4 + Math.floor(Math.random() * 3); // 4-6 чисел
+  const count = 3 + Math.floor(Math.random() * 3); // 3-5 чисел
+  let start = 1 + Math.floor(Math.random() * 10);
+  let step = 1 + Math.floor(Math.random() * 6);
+  let ratio = 2 + Math.floor(Math.random() * 3);
   const numbers = [];
-  while (numbers.length < count) {
-    const n = 1 + Math.floor(Math.random() * 99);
-    if (!numbers.includes(n)) numbers.push(n);
+
+  const mode = 1 + Math.floor(Math.random() * 4);
+  const text = document.createElement('div');
+  text.className = 'exp-target';
+  switch (mode) {
+    case 1:
+      text.textContent = `По возрастанию`;
+      while (numbers.length < count) {
+        const n = 1 + Math.floor(Math.random() * 99);
+        if (!numbers.includes(n)) numbers.push(n);
+      }
+      break;
+    case 2:
+      text.textContent = `По убыванию`;
+      while (numbers.length < count) {
+        const n = 1 + Math.floor(Math.random() * 99);
+        if (!numbers.includes(n)) numbers.push(n);
+      }
+      break;
+    case 3:
+      text.textContent = `Арифметическая прогрессия`;
+      for (let i = 0; i < Math.min(4, count); i++) numbers.push(start + step * i);
+      break;
+    case 4:
+      text.textContent = `Геометрическая прогрессия`;
+      for (let i = 0; i < Math.min(4, count); i++) numbers.push(start * Math.pow(ratio, i));
+      break;
+    default:
+      break;
   }
+  gameArea.appendChild(text);
+
+  // Генерируем числа
 
   // Сохраняем верный порядок
-  const sorted = numbers.slice().sort((a, b) => a - b);
+  const sorted = numbers.slice().sort((a, b) => (mode !== 2 ? a - b : b - a));
   STATE.level1ExpectedOrder = sorted;
   STATE.level1CurrentIndex = 0;
 
