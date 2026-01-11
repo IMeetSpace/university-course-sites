@@ -302,7 +302,7 @@ function runLevel1Round() {
   const shuffledNumbers = shuffle(numbers);
   shuffledNumbers.forEach((num) => {
     const tile = document.createElement('div');
-    const random = Math.ceil(Math.random() * 6);
+    const random = Math.ceil(Math.random() * 5);
     tile.className = `number-tile floating-number speed-${random}`;
     tile.textContent = String(num);
     tile.dataset.value = String(num);
@@ -396,14 +396,14 @@ function runLevel2Round() {
 
   shuffledOptions.forEach((value, idx) => {
     const tile = document.createElement('div');
-    tile.className = 'number-tile falling-number';
+    const random = Math.ceil(Math.random() * 5);
+    tile.className = `number-tile falling-number speed-${random}`;
     tile.textContent = String(value);
     tile.dataset.value = String(value);
     tile.dataset.correct = value === correctNext ? '1' : '0';
 
     const leftPercent = 10 + idx * 20 + Math.random() * 10;
     tile.style.left = `${leftPercent}%`;
-    tile.style.animationDuration = `${duration + Math.random() * 1.5}s`;
     tile.style.pointerEvents = 'auto';
     tile.setAttribute('draggable', 'true');
 

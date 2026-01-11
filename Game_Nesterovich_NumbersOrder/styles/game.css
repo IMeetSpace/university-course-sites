@@ -122,8 +122,22 @@
   left: 0;
   right: 0;
   margin: 0;
-  animation-name: fall;
-  animation-timing-function: linear;
+  animation: fall 5s linear infinite;
+}
+.number-tile.falling-number.speed-1 {
+  animation: fall 3s linear infinite;
+}
+.number-tile.falling-number.speed-2 {
+  animation: fall 4s linear infinite;
+}
+.number-tile.falling-number.speed-5 {
+  animation: fall 5s linear infinite;
+}
+.number-tile.falling-number.speed-4 {
+  animation: fall 6s linear infinite;
+}
+.number-tile.falling-number.speed-5 {
+  animation: fall 7s linear infinite;
 }
 
 .exp-slot {
