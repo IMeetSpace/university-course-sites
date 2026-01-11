@@ -51,6 +51,8 @@ const STATE = {
   maxLevelReached: 0,
 };
 
+const FIBONACHI = [1, 1, 2, 3, 5, 8, 13, 21, 34];
+
 // ----- Utils -----
 
 function $(id) {
@@ -377,27 +379,33 @@ function runLevel2Round() {
   gameArea.innerHTML = '';
 
   // Генерируем параметры последовательности
-  const isArithmetic = Math.random() < 0.6;
+  const mode = 1 + Math.floor(Math.random() * 3);
   let start = 1 + Math.floor(Math.random() * 10);
   let step = 1 + Math.floor(Math.random() * 6);
   let ratio = 2 + Math.floor(Math.random() * 3);
   const length = 4;
   const seq = [];
 
-  // Генерируем последовательность
-  if (isArithmetic) {
-    for (let i = 0; i < length; i++) seq.push(start + step * i);
-  } else {
-    for (let i = 0; i < length; i++) seq.push(start * Math.pow(ratio, i));
-  }
-
-  const correctNext = isArithmetic ? start + step * length : start * Math.pow(ratio, length);
-
   const text = document.createElement('div');
   text.className = 'exp-target';
-  text.textContent = isArithmetic
-    ? `Арифметическая прогрессия: ${seq.join(', ')}, ?`
-    : `Геометрическая прогрессия: ${seq.join(', ')}, ?`;
+  let correctNext;
+
+  // Генерируем последовательность
+  if (mode === 1) {
+    for (let i = 0; i < length; i++) seq.push(start + step * i);
+    text.textContent = `Арифметическая прогрессия: ${seq.join(', ')}, ?`;
+    correctNext = start + step * length;
+  } else if (mode === 2) {
+    for (let i = 0; i < length; i++) seq.push(start * Math.pow(ratio, i));
+    text.textContent = `Геометрическая прогрессия: ${seq.join(', ')}, ?`;
+    correctNext = start * Math.pow(ratio, length);
+  } else {
+    const l = Math.floor(Math.random() * 3);
+    FIBONACHI.slice(0, length + l).forEach((i) => seq.push(i));
+    text.textContent = `Последовательность Фибоначчи: ${seq.join(', ')}, ?`;
+    correctNext = FIBONACHI[length + l];
+  }
+
   gameArea.appendChild(text);
 
   // Добавляем на зону ответа
@@ -416,14 +424,13 @@ function runLevel2Round() {
   // Генерируем неверные варианты
   const options = [correctNext];
   while (options.length < 4) {
-    const noise = correctNext + (Math.floor(Math.random() * 7) - 3) * (isArithmetic ? step : 1);
+    const noise = correctNext + (Math.floor(Math.random() * 7) - 3) * (mode === 1 ? step : 1);
     if (noise !== correctNext && !options.includes(noise) && noise > 0) {
       options.push(noise);
     }
   }
 
   const shuffledOptions = shuffle(options);
-  const duration = 7;
 
   shuffledOptions.forEach((value, idx) => {
     const tile = document.createElement('div');
